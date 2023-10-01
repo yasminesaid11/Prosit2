@@ -10,7 +10,8 @@ public class ZooManagement {
         Scanner sc = new Scanner(System.in);
         ZooManagement zooManagement = new ZooManagement();
 
-       // System.out.print("Saisir le nom du zoo: ");
+
+        // System.out.print("Saisir le nom du zoo: ");
         //zooManagement.zooName = sc.nextLine();
 
         //System.out.print("Saisir le nombre des cages: ");
@@ -19,12 +20,14 @@ public class ZooManagement {
         //System.out.println(zooManagement.zooName + " comporte " + zooManagement.nbrCages + " cages");
         //------------Instruction7----------
         Animal lion = new Animal("lion", "symba", 4, true);
-        Zoo myZoo = new Zoo ("Yasmine Zoo", "Tunis", 5);
+        Zoo myZoo = new Zoo("Yasmine Zoo", "Tunis");
+        Zoo myZoo2 = new Zoo(" Zoo", "Sousse");
+
 
 
         //-------------instruction8----------
-       // myZoo.displayZoo();
-       // System.out.println(myZoo);
+        // myZoo.displayZoo();
+        // System.out.println(myZoo);
         //System.out.println(myZoo.toString());
 
         //------------Instruction9-------
@@ -33,14 +36,14 @@ public class ZooManagement {
         //System.out.println(lion.toString());
 
         //----------Instruction10---------
-        Animal  singe= new Animal("Singe", "Singe", 10, true);
+        Animal singe = new Animal("Singe", "Singe", 10, true);
         Animal giraffe = new Animal("Giraffe", "Giraffe", 4, true);
         Animal panda = new Animal("Panda", "Panda", 5, true);
 
-         myZoo.addAnimal(lion);
-         myZoo.addAnimal(singe);
-         myZoo.addAnimal(giraffe);
-         myZoo.addAnimal(panda);
+       // myZoo.addAnimal(lion);
+       // myZoo.addAnimal(singe);
+       // myZoo.addAnimal(giraffe);
+        //myZoo.addAnimal(panda);
 
         myZoo.displayZoo();
 
@@ -70,7 +73,10 @@ public class ZooManagement {
 
         myZoo.afficherAnimals();
 
+        //----------Instruction15----------
+        myZoo.isZooFull();
+
+        //----------Instruction1----------
+        Zoo.comparerZoo(myZoo, myZoo2);
     }
-
-
 }

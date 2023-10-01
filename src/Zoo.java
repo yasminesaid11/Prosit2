@@ -1,30 +1,34 @@
 public class Zoo {
     Animal[] animals;
+
+    int nbr_animal;
     String name;
     String city;
-    int nbrCages;
+    static final int nb_cages = 25;
     int i;
 
-    public Zoo(String name, String city, int nbrCages) {
+    public Zoo(String name, String city) {
         this.name = name;
         this.city = city;
-        this.nbrCages = nbrCages;
-        this.animals = new Animal[25];
+        animals = new Animal[nb_cages];
     }
+
     //----------Instruction8--------
     public void displayZoo() {
         System.out.println("Nom du zoo : " + name);
         System.out.println("Ville du zoo : " + city);
-        System.out.println("Nombre de cages : " + nbrCages);
+        System.out.println("Nombre de cages : " + nb_cages);
     }
+
     //----------Instruction9----------
     @Override
     public String toString() {
-        return "    Nom du zoo : " + name + "    Ville du zoo : " + city + "   Nombre de cages : " + nbrCages;
+        return "    Nom du zoo : " + name + "    Ville du zoo : " + city + "   Nombre de cages : " + nb_cages;
     }
+
     //----------Instruction10---------
     public boolean addAnimal(Animal animal) {
-        if (i > nbrCages) {
+        if (i > nb_cages) {
             System.out.println("erreur");
             return false;
         }
@@ -56,6 +60,7 @@ public class Zoo {
         }
         return -1;
     }
+
     //----------Instruction13----------
     public boolean removeAnimal(Animal animal) {
         for (int i = 0; i < animals.length; i++) {
@@ -68,4 +73,19 @@ public class Zoo {
         System.out.println("L'animal n'a pas été trouvé dans le zoo.");
         return false;
     }
+
+    //----------Instruction15----------
+
+    boolean isZooFull() {
+        return nbr_animal == nb_cages;
     }
+
+
+    //----------Instruction16----------
+
+    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+        if (z1.nbr_animal > z2.nb_cages)
+            return z1;
+        return z2;
+    }
+}
