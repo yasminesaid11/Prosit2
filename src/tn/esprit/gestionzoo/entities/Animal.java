@@ -1,5 +1,6 @@
+package tn.esprit.gestionzoo.entities;
+
 //-----------Instruction5----------
-//-----------Classe-Animal---------
 public class Animal {
     String family;
     String name;
@@ -11,6 +12,42 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
+    //------------Instrucction18----------
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("age negatif.");
+        }    }
+
+    public boolean isMammal() {
+        return isMammal;
+    }
+
+    public void setMammal(boolean mammal) {
+        isMammal = mammal;
+    }
+
     //---------- Instruction9----------
     public void displayAnimal() {
         System.out.println("Nom de l'animal : " + name);

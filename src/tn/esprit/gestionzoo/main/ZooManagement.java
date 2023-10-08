@@ -1,3 +1,8 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
+
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -20,8 +25,8 @@ public class ZooManagement {
         //System.out.println(zooManagement.zooName + " comporte " + zooManagement.nbrCages + " cages");
         //------------Instruction7----------
         Animal lion = new Animal("lion", "symba", 4, true);
-        Zoo myZoo = new Zoo("Yasmine Zoo", "Tunis");
-        Zoo myZoo2 = new Zoo(" Zoo", "Sousse");
+        Zoo myZoo = new Zoo("Yasmine tn.esprit.gestionzoo.entities.Zoo", "Tunis");
+        Zoo myZoo2 = new Zoo(" tn.esprit.gestionzoo.entities.Zoo", "Sousse");
 
 
 

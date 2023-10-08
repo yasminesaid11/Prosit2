@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
     Animal[] animals;
 
@@ -11,6 +13,41 @@ public class Zoo {
         this.name = name;
         this.city = city;
         animals = new Animal[nb_cages];
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public int getNbr_animal() {
+        return nbr_animal;
+    }
+
+    public void setNbr_animal(int nbr_animal) {
+        this.nbr_animal = nbr_animal;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Le nom est vide.");
+        }    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     //----------Instruction8--------
@@ -28,8 +65,9 @@ public class Zoo {
 
     //----------Instruction10---------
     public boolean addAnimal(Animal animal) {
-        if (i > nb_cages) {
-            System.out.println("erreur");
+        //-------------Instruction17-----------
+        if (isZooFull()) {
+            System.out.println("Le zoo est plein.");
             return false;
         }
 
@@ -76,14 +114,14 @@ public class Zoo {
 
     //----------Instruction15----------
 
-    boolean isZooFull() {
+    public boolean isZooFull() {
         return nbr_animal == nb_cages;
     }
 
 
     //----------Instruction16----------
 
-    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if (z1.nbr_animal > z2.nb_cages)
             return z1;
         return z2;
