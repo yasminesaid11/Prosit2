@@ -6,13 +6,13 @@ public class Animal {
     String name;
     int age;
     boolean isMammal;
-    public Animal(String family, String name, int age, boolean isMammal) {
-        this.family = family;
-        this.name = name;
-        this.age = age;
+   public Animal(String family, String name, int age, boolean isMammal) {
+       this.family = family;
+       this.name = name;
+      this.age = age;
         this.isMammal = isMammal;
     }
-    //------------Instrucction18----------
+       //------------Instrucction18----------
     public String getFamily() {
         return family;
     }
@@ -21,7 +21,7 @@ public class Animal {
         this.family = family;
     }
 
-    public String getName() {
+   public String getName() {
         return name;
     }
 
@@ -39,7 +39,6 @@ public class Animal {
         } else {
             System.out.println("age negatif.");
         }    }
-
     public boolean isMammal() {
         return isMammal;
     }
@@ -48,16 +47,19 @@ public class Animal {
         isMammal = mammal;
     }
 
-    //---------- Instruction9----------
-    public void displayAnimal() {
+       //---------- Instruction9----------
+   public void displayAnimal() {
         System.out.println("Nom de l'animal : " + name);
         System.out.println("famille de l'animal : " + family);
         System.out.println("Age de l'animal : " + age);
         System.out.println("Genre l'animal : " + isMammal);
 
     }
-    @Override
-    public String toString() {
-        return "Nom de l'animal : " + name + "famille de l'animal : " + family +"Age de l'animal : " + age + "Genre l'animal : " + isMammal;
-    }
-}
+       @Override
+
+       public String toString () {
+           return "Nom de l'animal : " + name + "famille de l'animal : " + family + "Age de l'animal : " + age + "Genre l'animal : " + isMammal;
+       }
+
+
+   }
