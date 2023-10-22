@@ -1,8 +1,6 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Aquatique;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
 
 import java.util.Scanner;
 
@@ -25,13 +23,14 @@ public class ZooManagement {
         //System.out.println(zooManagement.zooName + " comporte " + zooManagement.nbrCages + " cages");
         //------------Instruction7----------
 //        Animal lion = new Animal("lion", "symba", 4, true);
-//        Zoo myZoo = new Zoo("Yasmine tn.esprit.gestionzoo.entities.Zoo", "Tunis");
+//       Zoo myZoo = new Zoo("Yasmine ", "Tunis");
+
 //        Zoo myZoo2 = new Zoo(" tn.esprit.gestionzoo.entities.Zoo", "Sousse");
 //
 //
 
         //-------------instruction8----------
-        // myZoo.displayZoo();
+//         myZoo.displayZoo();
         // System.out.println(myZoo);
         //System.out.println(myZoo.toString());
 
@@ -87,10 +86,23 @@ public class ZooManagement {
 
 //------------------Instruction21------------
 
-        Aquatique a = new Aquatique  (habitat="Water");
-        Dolphin = new Dolphin(habitat = "Ocean", swimmingSpeed = 25.0);
+//        Aquatique a = new Aquatique  (habitat="Water");
+//        Aquatique.Dolphin Dolphin = new Dolphin(habitat = "Ocean", swimmingSpeed = 25.0);
+//
+//        Aquatique.swim();
+//        dolphin.swim();
 
-        Aquatique.swim();
-        dolphin.swim();
     }
+    //------------------Instruction26------------
+
+    Dolphin dolphin1 = new Dolphin("Ocean", "dolphin", 20, true ,"habitat");
+   Penguin penguin1 = new Penguin("Antarctic",  "penguin", 20, true ,"habitat");
+Zoo myZoo = new Zoo("Yasmine", "Tunis");
+
+Zoo myZoo = new Zoo("Yasmine ", "Tunis");
+
+     myZoo.addAquaticAnimal(dolphin1);
+     myZoo.addAquaticAnimal(penguin1);
+     myZoo.displayNumberOfAquaticsByType();
+
 }

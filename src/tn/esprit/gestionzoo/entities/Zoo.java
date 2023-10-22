@@ -1,5 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
+
+import java.util.List;
+
 public class Zoo {
     Animal[] animals;
 
@@ -9,11 +12,20 @@ public class Zoo {
     static final int nb_cages = 25;
     int i;
 
+    private AquaticAnimal[] aquaticAnimals = new AquaticAnimal[10];
+    public List<Penguin> penguins;
+
+
     public Zoo(String name, String city) {
         this.name = name;
         this.city = city;
         animals = new Animal[nb_cages];
     }
+
+    public Zoo() {
+
+    }
+
 
     public Animal[] getAnimals() {
         return animals;
@@ -40,7 +52,8 @@ public class Zoo {
             this.name = name;
         } else {
             System.out.println("Le nom est vide.");
-        }    }
+        }
+    }
 
     public String getCity() {
         return city;
@@ -126,4 +139,48 @@ public class Zoo {
             return z1;
         return z2;
     }
+    //----------Instruction25----------
+
+    public void addAquaticAnimal(AquaticAnimal aquatic) {
+        int i = 0;
+        if (i < 10) {
+            aquaticAnimals[i] = aquatic;
+            i++;
+        } else {
+            System.out.println("Zoo complet");
+        }
+    }
+    //------------------Instruction29------------
+    public float maxPenguinSwimmingDepth() {
+
+        float maxDepth = penguins.get(0).getSwimmingDepth();
+
+        for (int i = 1; i < penguins.size(); i++) {
+            float depth = penguins.get(i).getSwimmingDepth();
+            if (depth > maxDepth) {
+                maxDepth = depth;
+            }
+        }
+
+        return maxDepth;
+    }
+    //------------------Instruction30------------
+
+    public void displayNumberOfAquaticsByType() {
+        int nb_dolphin = 0;
+        int nb_pinguin = 0;
+
+        for (Animal animal : animals) {
+            if (animal instanceof Dolphin) {
+                nb_dolphin++;
+            } else if (animal instanceof Penguin) {
+                nb_pinguin++;
+            }
+        }
+
+        System.out.println(nb_dolphin);
+        System.out.println(nb_pinguin);
+    }
+
 }
+
