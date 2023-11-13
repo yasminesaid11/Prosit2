@@ -91,18 +91,54 @@ public class ZooManagement {
 //
 //        Aquatique.swim();
 //        dolphin.swim();
+        //------------------Instruction26------------
 
+        Dolphin dolphin1 = new Dolphin("Ocean", "dolphin", 20, true, "habitat");
+        Penguin penguin1 = new Penguin("Antarctic", "penguin", 20, true, "habitat");
+        Zoo myZoo = new Zoo("Yasmine", "Tunis");
+
+
+        myZoo.addAquaticAnimal(dolphin1);
+        myZoo.addAquaticAnimal(penguin1);
+        myZoo.displayNumberOfAquaticsByType();
+
+
+        Animal singe = new Animal("Singe", "Singe", 10, true);
+        Animal giraffe = new Animal("Giraffe", "Giraffe", 4, true);
+        Animal panda = new Animal("Panda", "Panda", -1, true);
+        try {
+            myZoo.addAnimal(singe);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Le zoo a " + myZoo.getNbr_animal() + " animaux.");
+        }
+        try {
+            myZoo.addAnimal(giraffe);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Le zoo a " + myZoo.getNbr_animal() + " animaux.");
+        }
+        try {
+            myZoo.addAnimal(panda);
+        } catch (InvalidAgeException e) {
+            System.out.println(e.getMessage());
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Le zoo a " + myZoo.getNbr_animal() + " animaux.");
+        }
+
+        Penguin penguin2 = new Penguin("Antarctic", "penguin2", 20, true, "habitat");
+        penguin2.eatMeat(Food.MEAT);
+
+        Terrestrial singe2 = new Terrestrial();
+        singe2.eatMeat(Food.MEAT);
     }
-    //------------------Instruction26------------
-
-    Dolphin dolphin1 = new Dolphin("Ocean", "dolphin", 20, true ,"habitat");
-   Penguin penguin1 = new Penguin("Antarctic",  "penguin", 20, true ,"habitat");
-Zoo myZoo = new Zoo("Yasmine", "Tunis");
-
-Zoo myZoo = new Zoo("Yasmine ", "Tunis");
-
-     myZoo.addAquaticAnimal(dolphin1);
-     myZoo.addAquaticAnimal(penguin1);
-     myZoo.displayNumberOfAquaticsByType();
-
 }

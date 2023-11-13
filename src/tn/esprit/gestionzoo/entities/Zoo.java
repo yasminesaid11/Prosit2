@@ -77,17 +77,19 @@ public class Zoo {
     }
 
     //----------Instruction10---------
-    public boolean addAnimal(Animal animal) {
-        //-------------Instruction17-----------
-        if (isZooFull()) {
-            System.out.println("Le zoo est plein.");
-            return false;
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        //-------------Instruction32-----------
+        if (animal.age > 0) {
+            if (nbr_animal < nb_cages) {
+                animals[nbr_animal] = animal;
+                nbr_animal++;
+            } else {
+                throw new ZooFullException("zoo is full");
+            }
+
+        } else {
+            throw new InvalidAgeException("age invalid ");
         }
-
-        animals[i] = animal;
-        i++;
-        return true;
-
     }
     //----------Instruction11---------
 
